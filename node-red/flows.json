@@ -1,0 +1,806 @@
+[
+    {
+        "id": "bcbad7d6.d0e7d",
+        "type": "tab",
+        "label": "Temperature Control",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5a84a84d3d950915",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [
+            {
+                "x": 40,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "90563e868440b145"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 380,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "90563e868440b145",
+                        "port": 0
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "279b35cc.5bd67a",
+        "type": "subflow",
+        "name": "Translate and Wait",
+        "info": "\n\n### Parameters\n\n* **urn**: The design URN; returned when uploading the file to Forge. The URN needs to be safe base64 encoded.\n\n* **region** [optional, string]: Region in which to store outputs. Possible values: ```US```, ```EMEA```. By default, it is set to ```US```.\n\n* **xAdsForce** [optional, boolean]: ```true```: the endpoint replaces previously translated output file types with the newly generated derivatives\n  ```false``` (default): previously created derivatives are not replaced\n\n* **type** [optional, string]: The requested output type (default is ```svf```)\n\n* **views** [optional, string[]]: Required for ```svf``` and ```svf2``` output\n\n* **advanced** [optional: object]: A set of special options depending of the chosen format. See documentation for more details\n\n## Outputs\n\n* **response**: the final manifest\n\n* **progress**: an object containing a status and progress field.\n  * status: Overall status for translation jobs in the “manifest”. Possible values: pending, ```success```, ```inprogress```, ```failed```, ```timeout```\n  * progress: Overall progress for all translation jobs in the “manifest”. Possible values: ```complete```, ```##% complete```\n\n* **error**: an error occured\n",
+        "category": "forge",
+        "in": [
+            {
+                "x": 80,
+                "y": 180,
+                "wires": [
+                    {
+                        "id": "ec1ff16b.974e7"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 920,
+                "y": 520,
+                "wires": [
+                    {
+                        "id": "12fb1468.5d5d8c",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 920,
+                "y": 660,
+                "wires": [
+                    {
+                        "id": "30271f6c.8fb83",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 920,
+                "y": 360,
+                "wires": [
+                    {
+                        "id": "12fb1468.5d5d8c",
+                        "port": 1
+                    },
+                    {
+                        "id": "779c29a9.5eaee8",
+                        "port": 1
+                    },
+                    {
+                        "id": "9f6ff471.0ae0f8",
+                        "port": 1
+                    },
+                    {
+                        "id": "230af144.090c9e",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "outputLabels": [
+            "response",
+            "progress",
+            "error"
+        ],
+        "icon": "node-red-node-forge/forge.png",
+        "status": {
+            "x": 340,
+            "y": 40,
+            "wires": [
+                {
+                    "id": "4b257ec1.1b9e8",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "9e6ea8ab1266cea1",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#437128",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "949fd4a09f36ac6b",
+        "type": "MySQLdatabase",
+        "name": "db",
+        "host": "sql6.freesqldatabase.com",
+        "port": "3306",
+        "db": "sql6685961",
+        "tz": "",
+        "charset": "UTF8"
+    },
+    {
+        "id": "3e400eaeee7d9144",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM5",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "632ce51bae434d89",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM6",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "ac25adff1904bb58",
+        "type": "remote-config",
+        "name": "Node-RED UI",
+        "host": "localhost",
+        "protocol": "http",
+        "port": "1880",
+        "baseurl": "/ui",
+        "instancehash": "ee9z52g162jp5d058gsh418b7juy5q0q2l6oamvfkbk9we82j93edpw11lxyuahr",
+        "server": "nodered04.remote-red.com",
+        "region": "de"
+    },
+    {
+        "id": "9b6e8a6a.8b6a98",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM7",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "7b3ce6f6.9e7758",
+        "type": "serial-port",
+        "name": "",
+        "serialport": "COM7",
+        "serialbaud": "9600",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "2c37c1d3.6461b2",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "d68c3510.8a09b8",
+        "order": 1,
+        "disp": false,
+        "width": "7",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d68c3510.8a09b8",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "90563e868440b145",
+        "type": "function",
+        "z": "5a84a84d3d950915",
+        "name": "Account Verification",
+        "func": "var accounts = flow.get(\"accounts\") || [{ username: \"1\", password: \"1\" }, { username: \"2\", password: \"2\" }];\n\nvar username = msg.payload.username;\nvar password = msg.payload.password;\n\nif (username === \"1\" && password === \"1\") {\n  msg.payload = \"1\";\n} else if (username === \"2\" && password === \"2\") {\n  msg.payload = \"2\";\n} else {\n  msg.payload = \"3\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 202.0000457763672,
+        "y": 75.0000057220459,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fca7e07e.5ad71",
+        "type": "change",
+        "z": "279b35cc.5bd67a",
+        "name": "Inject",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "err",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "230af144.090c9e"
+            ]
+        ]
+    },
+    {
+        "id": "230af144.090c9e",
+        "type": "forge-model-derivative",
+        "z": "279b35cc.5bd67a",
+        "name": "",
+        "topic": "",
+        "forge": "",
+        "operation": "Translate",
+        "raw": false,
+        "all": false,
+        "urn": "",
+        "derivativeurn": "",
+        "guid": "autodesk",
+        "objectid": "",
+        "xAdsForce": false,
+        "forceget": false,
+        "rootFilename": "",
+        "range": "",
+        "width": 200,
+        "height": 200,
+        "jobs": [
+            {
+                "type": "svf",
+                "views": [
+                    "2d",
+                    "3d"
+                ],
+                "advanced": {
+                    "conversionMethod": "legacy"
+                }
+            }
+        ],
+        "checkReferences": false,
+        "references": "[]",
+        "noerr": 0,
+        "ifModifiedSince": "",
+        "acceptEncoding": "",
+        "region": "US",
+        "workflow": "",
+        "workflowAttribute": "",
+        "x": 330,
+        "y": 340,
+        "wires": [
+            [
+                "80fdacbf.20a7",
+                "4db03c7e.3251b4"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "80fdacbf.20a7",
+        "type": "delay",
+        "z": "279b35cc.5bd67a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "30",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 400,
+        "wires": [
+            [
+                "779c29a9.5eaee8"
+            ]
+        ]
+    },
+    {
+        "id": "779c29a9.5eaee8",
+        "type": "forge-model-derivative",
+        "z": "279b35cc.5bd67a",
+        "name": "Manifest",
+        "topic": "",
+        "forge": "",
+        "operation": "GetManifest",
+        "raw": false,
+        "all": false,
+        "urn": "",
+        "derivativeurn": "",
+        "guid": "autodesk",
+        "objectid": "",
+        "xAdsForce": false,
+        "forceget": false,
+        "rootFilename": "",
+        "range": "",
+        "width": 200,
+        "height": 200,
+        "jobs": [
+            {
+                "type": "svf",
+                "views": [
+                    "2d",
+                    "3d"
+                ],
+                "advanced": {
+                    "conversionMethod": "legacy"
+                }
+            }
+        ],
+        "checkReferences": false,
+        "references": "[]",
+        "noerr": 0,
+        "ifModifiedSince": "",
+        "acceptEncoding": "",
+        "region": "US",
+        "workflow": "",
+        "workflowAttribute": "",
+        "x": 680,
+        "y": 420,
+        "wires": [
+            [
+                "b40ea287.2aa9d"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "b40ea287.2aa9d",
+        "type": "while-loop",
+        "z": "279b35cc.5bd67a",
+        "name": "Wait for Translation",
+        "condi": "!['success' , 'failed', 'timeout'].includes (msg.payload.status)",
+        "x": 510,
+        "y": 600,
+        "wires": [
+            [
+                "12fb1468.5d5d8c"
+            ],
+            [
+                "18ae35b7.6110ba",
+                "30271f6c.8fb83"
+            ]
+        ]
+    },
+    {
+        "id": "18ae35b7.6110ba",
+        "type": "delay",
+        "z": "279b35cc.5bd67a",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "outputs": 1,
+        "x": 500,
+        "y": 440,
+        "wires": [
+            [
+                "779c29a9.5eaee8"
+            ]
+        ]
+    },
+    {
+        "id": "12fb1468.5d5d8c",
+        "type": "switch",
+        "z": "279b35cc.5bd67a",
+        "name": "Ready?",
+        "property": "payload.status",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "success",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 760,
+        "y": 520,
+        "wires": [
+            [
+                "30271f6c.8fb83"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4b257ec1.1b9e8",
+        "type": "status",
+        "z": "279b35cc.5bd67a",
+        "name": "",
+        "scope": null,
+        "x": 180,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ec1ff16b.974e7",
+        "type": "function",
+        "z": "279b35cc.5bd67a",
+        "name": "Inject",
+        "func": "if ( msg.err )\n    delete msg.err;\n    \n//context.set / .get\n\n// Priority: payload, msg, env, default\nmsg.urn = (msg.payload && msg.payload.urn) || msg.urn || env.get('urn');\nmsg.region = (msg.payload && msg.payload.region) || msg.region || env.get('region') || 'US';\nmsg.xAdsForce = (msg.payload && msg.payload.xAdsForce) || msg.xAdsForce || false;\nmsg.xAdsForce = msg.xAdsForce === true || msg.xAdsForce === 'true'|| msg.xAdsForce === 1 || msg.xAdsForce === '1';\nmsg.type = (msg.payload && msg.payload.type) || msg.type || env.get('type') || 'svf';\nmsg.views = (msg.payload && msg.payload.views) || msg.views || env.get('views') || [];\nmsg.advanced = (msg.payload && msg.payload.advanced) || msg.advanced || env.get('advanced') || {};\n\nnode.status ({});\nif ( !msg.urn || msg.urn === '' ) {\n    node.status ({\n        fill: 'red',\n        shape: 'dot',\n        text: 'Invalid urn!'});\n    node.error('Provide a urn!');\n    delete msg.payload;\n    msg.err ={\n        reason: \"The parameter 'urn' should be a nonempty string.\"\n    };\n}\n    \nreturn (msg);",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 190,
+        "y": 180,
+        "wires": [
+            [
+                "9f6ff471.0ae0f8"
+            ]
+        ]
+    },
+    {
+        "id": "9f6ff471.0ae0f8",
+        "type": "switch",
+        "z": "279b35cc.5bd67a",
+        "name": "Params Ok?",
+        "property": "err",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "null"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 330,
+        "y": 180,
+        "wires": [
+            [
+                "fca7e07e.5ad71"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "4db03c7e.3251b4",
+        "type": "function",
+        "z": "279b35cc.5bd67a",
+        "name": "Requested",
+        "func": "msg.payload ={\n    status: 'pending',\n    progress: '0% complete'\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "30271f6c.8fb83"
+            ]
+        ]
+    },
+    {
+        "id": "30271f6c.8fb83",
+        "type": "function",
+        "z": "279b35cc.5bd67a",
+        "name": "",
+        "func": "node.status ({\n    fill: 'yellow',\n    shape: 'square',\n    text: msg.payload.progress\n});\n\nreturn (msg);",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 770,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d4e1e681.6fa318",
+        "type": "serial in",
+        "z": "bcbad7d6.d0e7d",
+        "name": "",
+        "serial": "7b3ce6f6.9e7758",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "c0d82da5.2ac2d"
+            ]
+        ]
+    },
+    {
+        "id": "c0d82da5.2ac2d",
+        "type": "json",
+        "z": "bcbad7d6.d0e7d",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 280,
+        "y": 160,
+        "wires": [
+            [
+                "69922192578c64b0",
+                "15295b45d168a718"
+            ]
+        ]
+    },
+    {
+        "id": "48e0d7e5.eaa45c",
+        "type": "ui_slider",
+        "z": "bcbad7d6.d0e7d",
+        "name": "",
+        "label": "Set Temperature",
+        "tooltip": "",
+        "group": "2c37c1d3.6461b2",
+        "order": 1,
+        "width": 7,
+        "height": 1,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": "0",
+        "max": "100",
+        "step": "1",
+        "className": "",
+        "x": 160,
+        "y": 540,
+        "wires": [
+            [
+                "b63b1569.71d47"
+            ]
+        ]
+    },
+    {
+        "id": "b63b1569.71d47",
+        "type": "serial out",
+        "z": "bcbad7d6.d0e7d",
+        "name": "",
+        "serial": "7b3ce6f6.9e7758",
+        "x": 410,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "15295b45d168a718",
+        "type": "ui_gauge",
+        "z": "bcbad7d6.d0e7d",
+        "name": "RPM Gauge",
+        "group": "2c37c1d3.6461b2",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "RPM",
+        "label": "RPM",
+        "format": "{{msg.payload.rpm}}",
+        "min": 0,
+        "max": 1000,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "69922192578c64b0",
+        "type": "ui_gauge",
+        "z": "bcbad7d6.d0e7d",
+        "name": "Temperature Gauge",
+        "group": "2c37c1d3.6461b2",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "'C",
+        "format": "{{msg.payload.temperature}}",
+        "min": 0,
+        "max": 1000,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 640,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7faa12e9422c0719",
+        "type": "remote-access",
+        "z": "bcbad7d6.d0e7d",
+        "confignode": "ac25adff1904bb58",
+        "name": "",
+        "verbose": 0,
+        "x": 180,
+        "y": 720,
+        "wires": [
+            [],
+            []
+        ]
+    }
+]
